@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "husam"
+version = "0.1.0"
+description = "Single-call LLM worker for KutAI: grader, summarizer, classifier and image generation without an agent loop."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Sakir Cimen" }]
+keywords = ["llm", "llm-evaluation", "ai-agents", "image-generation", "kutai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Framework :: AsyncIO",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "clair_obscur @ git+https://github.com/msakirc/clair-obscur.git",
+    "dabidabi @ git+https://github.com/msakirc/dabidabi.git",
+    "fatih_hoca @ git+https://github.com/msakirc/fatih-hoca.git",
+    "hallederiz_kadir @ git+https://github.com/msakirc/hallederiz-kadir.git",
+    "kara_kutu @ git+https://github.com/msakirc/kara-kutu.git",
+    "nerd_herd @ git+https://github.com/msakirc/nerd-herd.git",
+    "paintress @ git+https://github.com/msakirc/paintress.git",
+    "general_beckman @ git+https://github.com/msakirc/general-beckman.git",  # back-edge (layering debt): lifecycle_events — see tests/test_package_layering.py
+    "yazbunu @ git+https://github.com/msakirc/yazbunu.git",
+]
+
+[project.urls]
+Homepage = "https://github.com/msakirc/husam"
+Repository = "https://github.com/msakirc/husam"
+Monorepo = "https://github.com/msakirc/kutai/tree/main/packages/husam"
+
+[tool.setuptools.packages.find]
+where = ["src"]
